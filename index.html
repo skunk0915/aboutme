@@ -717,6 +717,35 @@
       opacity: 0;
       transform: scale(.8) translate(-50%, -50%)
     }
+    .basic-h2{
+      color: #49c2ff;
+      text-align: center;
+      font-weight: bold;
+      font-size: 48px;
+      line-height: 1.5;
+      margin-bottom: 1em;
+    }
+    #self-intro{
+      
+      margin: 5em auto 0;
+
+    }
+    #self-intro .self-intro-txt{
+      background: url("src/assets/cap-wh.webp") no-repeat;
+      background-size: cover;
+      display: block;
+      line-height: 2em;
+    }
+    #self-intro .self-intro-txt-bg{
+      padding: 2em;
+      background: #00000077;
+    }
+    @media screen and (min-width: 640px) {
+      #self-intro{
+        width: 60%;
+      }
+    }
+
   </style>
   <style type="text/css" data-vite-dev-id="/dev-server/src/index.css">
     *,
@@ -4747,6 +4776,53 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
     .uranai-scroll-right {
       animation: uranai-scroll-right 120s linear infinite;
     }
+
+    /* スマホレイアウト対応 */
+    @media (max-width: 768px) {
+      /* ハンバーガーメニューボタンを非表示 */
+      .md\:hidden {
+        display: none !important;
+      }
+
+      /* ナビゲーションをスマホでも表示 */
+      .hidden.md\:flex {
+        display: flex !important;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 1rem 0;
+        gap: 1rem;
+      }
+
+      /* スマホでのナビゲーションリンクのテキストを小さく */
+      .hidden.md\:flex a {
+        font-size: 0.875rem;
+      }
+
+      /* ヘッダーの高さ調整 */
+      header .flex.items-center.justify-between {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto !important;
+        padding: 0.5rem 0;
+      }
+
+      /* ページ上部がヘッダーに隠れないようpaddingを追加 */
+      body section:first-of-type,
+      .min-h-screen > section:first-of-type {
+        padding-top: 80px;
+      }
+
+      /* ヘッダーとコンテンツの余白を削除 */
+      header {
+        padding-bottom: 0 !important;
+      }
+
+      header .max-w-6xl {
+        padding-bottom: 0.5rem;
+      }
+    }
   </style>
 </head>
 
@@ -4997,7 +5073,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                   data-component-content="%7B%22text%22%3A%22%E6%9C%88%E9%96%93PV%E9%81%94%E6%88%90%22%2C%22className%22%3A%22text-muted-foreground%22%7D"
                   class="text-muted-foreground">月間PV達成</div>
               </div>
-            </div><button data-lov-id="src/components/Hero.tsx:62:10" data-lov-name="Button"
+            </div><a href="#work"><button data-lov-id="src/components/Hero.tsx:62:10" data-lov-name="Button"
               data-component-path="src/components/Hero.tsx" data-component-line="62" data-component-file="Hero.tsx"
               data-component-name="Button"
               data-component-content="%7B%22text%22%3A%22%E5%AE%9F%E7%B8%BE%E3%82%92%E8%A6%8B%E3%82%8B%22%2C%22className%22%3A%22bg-primary%20text-primary-foreground%20hover%3Abg-primary%2F90%20text-lg%20px-8%20py-3%20rounded-full%20shadow-lg%20hover%3Ashadow-xl%20transition-all%20duration-300%22%7D"
@@ -5010,9 +5086,10 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                 data-component-content="%7B%22className%22%3A%22ml-2%20w-5%20h-5%22%7D">
                 <path d="M12 5v14"></path>
                 <path d="m19 12-7 7-7-7"></path>
-              </svg></button>
+              </svg></button></a>
           </div>
         </div>
+
         <div data-lov-id="src/components/Hero.tsx:74:6" data-lov-name="div"
           data-component-path="src/components/Hero.tsx" data-component-line="74" data-component-file="Hero.tsx"
           data-component-name="div"
@@ -5031,6 +5108,22 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
           class="absolute bottom-40 left-20 w-5 h-5 bg-accent rounded-full animate-float opacity-50"
           style="animation-delay: 4s;"></div>
       </section>
+
+      <section id="self-intro" class="">
+        <h2 class="basic-h2">自己紹介</h2>
+        
+        <div class="self-intro-txt">
+          <div class="self-intro-txt-bg">
+
+            <p>こんにちは。大学卒業後、やりたいことが見つからず、「寺で修行したら何か見えるかも」という謎理論で寺に飛び込みで「修行させてください」と言って一年間 <del>監禁</del> 修行した結果、住職になり、現在も住職のままWEB制作会社員をやっています。</p>
+            <p>WEBデザイナーを目指し、デザインの勉強をして、HTMLは書けるようになったもののそれだけでは全く実務で使い物にならないことを知り、PHPでの動的な制御、データベース連携、JavaScriptでのアニメーションやエンターテインメントな演出を身につけました。</p>
+            <p>もともと独立してやっていきたいことが最初にあったのでいわゆる「叩き上げ」で一人で完結できることを前提に制作をしてきました。</p>
+            <p>現在は会社で、デザイナー、プログラマー、ライターなどと組んでクライアントとの橋渡しとなりつつ陣頭指揮を取るディレクター職を専門にしていますが、元々作るのが好きなのでプライベートでは個人でいろいろ作ったりしているので、お力になれることもあるかもしれません。</p>
+            <p>よろしければお話をお聞かせください。</p>
+          </div>
+        </div>
+      </section>
+
       <div data-lov-id="src/pages/Index.tsx:13:6" data-lov-name="div" data-component-path="src/pages/Index.tsx"
         data-component-line="13" data-component-file="Index.tsx" data-component-name="div"
         data-component-content="%7B%7D" id="about">
@@ -6212,12 +6305,12 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                   data-lov-id="src/components/Portfolio.tsx:140:45" data-lov-name="br"
                   data-component-path="src/components/Portfolio.tsx" data-component-line="140"
                   data-component-file="Portfolio.tsx" data-component-name="br"
-                  data-component-content="%7B%7D">WordPressサイト制作からSEO対策まで、まずはお気軽にお問い合わせください。</p><button
+                  data-component-content="%7B%7D">WordPressサイト制作からSEO対策まで、まずはお気軽にお問い合わせください。</p><a href="#contact"><button
                 data-lov-id="src/components/Portfolio.tsx:143:12" data-lov-name="Button"
                 data-component-path="src/components/Portfolio.tsx" data-component-line="143"
                 data-component-file="Portfolio.tsx" data-component-name="Button"
                 data-component-content="%7B%22text%22%3A%22%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B%22%2C%22className%22%3A%22bg-primary%20text-primary-foreground%20hover%3Abg-primary%2F90%20px-8%20py-3%20rounded-full%20shadow-lg%20hover%3Ashadow-xl%20transition-all%20duration-300%22%7D"
-                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-11 bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">お問い合わせ</button>
+                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-11 bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">お問い合わせ</button></a>
             </div>
           </div>
         </div>
@@ -6644,30 +6737,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
               data-component-name="div"
               data-component-content="%7B%22className%22%3A%22border-t%20border-border%20pt-8%22%7D"
               class="border-t border-border pt-8">
-              <div data-lov-id="src/components/Footer.tsx:37:12" data-lov-name="div"
-                data-component-path="src/components/Footer.tsx" data-component-line="37"
-                data-component-file="Footer.tsx" data-component-name="div"
-                data-component-content="%7B%22className%22%3A%22flex%20items-center%20justify-center%20space-x-2%20text-sm%20text-muted-foreground%22%7D"
-                class="flex items-center justify-center space-x-2 text-sm text-muted-foreground"><span
-                  data-lov-id="src/components/Footer.tsx:38:14" data-lov-name="span"
-                  data-component-path="src/components/Footer.tsx" data-component-line="38"
-                  data-component-file="Footer.tsx" data-component-name="span"
-                  data-component-content="%7B%22text%22%3A%22%C2%A9%20WEB%E5%88%B6%E4%BD%9C%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA.%20Made%20with%22%7D">©
-                  2025 WEB制作ポートフォリオ. Made with</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" class="lucide lucide-heart w-4 h-4 text-destructive fill-current"
-                  data-lov-id="src/components/Footer.tsx:39:14" data-lov-name="Heart"
-                  data-component-path="src/components/Footer.tsx" data-component-line="39"
-                  data-component-file="Footer.tsx" data-component-name="Heart"
-                  data-component-content="%7B%22className%22%3A%22w-4%20h-4%20text-destructive%20fill-current%22%7D">
-                  <path
-                    d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z">
-                  </path>
-                </svg><span data-lov-id="src/components/Footer.tsx:40:14" data-lov-name="span"
-                  data-component-path="src/components/Footer.tsx" data-component-line="40"
-                  data-component-file="Footer.tsx" data-component-name="span"
-                  data-component-content="%7B%22text%22%3A%22and%20professional%20experience.%22%7D">and professional
-                  experience.</span></div>
+
             </div>
           </div>
         </div>
