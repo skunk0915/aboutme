@@ -1,4 +1,4 @@
-<html lang="en" style="scroll-behavior: smooth;">
+<html lang="ja" style="scroll-behavior: smooth;">
 
 <head>
   <script type="module">import { injectIntoGlobalHook } from "/@react-refresh";
@@ -735,6 +735,12 @@
       background-size: cover;
       display: block;
       line-height: 2em;
+      transition: background-image 0.3s ease;
+    }
+    #self-intro .self-intro-txt:hover{
+      background: url("src/assets/priest.webp") no-repeat;
+      background-size: cover;
+      background-position: right;
     }
     #self-intro .self-intro-txt-bg{
       padding: 2em;
@@ -745,7 +751,11 @@
         width: 60%;
       }
     }
-
+    .notice{
+      font-size: .7em;
+      line-height: 1.2;
+      color: #999;
+    }
   </style>
   <style type="text/css" data-vite-dev-id="/dev-server/src/index.css">
     *,
@@ -5118,7 +5128,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
             <p>こんにちは。大学卒業後、やりたいことが見つからず、「寺で修行したら何か見えるかも」という謎理論で寺に飛び込みで「修行させてください」と言って一年間 <del>監禁</del> 修行した結果、住職になり、現在も住職のままWEB制作会社員をやっています。</p>
             <p>WEBデザイナーを目指し、デザインの勉強をして、HTMLは書けるようになったもののそれだけでは全く実務で使い物にならないことを知り、PHPでの動的な制御、データベース連携、JavaScriptでのアニメーションやエンターテインメントな演出を身につけました。</p>
             <p>もともと独立してやっていきたいことが最初にあったのでいわゆる「叩き上げ」で一人で完結できることを前提に制作をしてきました。</p>
-            <p>現在は会社で、デザイナー、プログラマー、ライターなどと組んでクライアントとの橋渡しとなりつつ陣頭指揮を取るディレクター職を専門にしていますが、元々作るのが好きなのでプライベートでは個人でいろいろ作ったりしているので、お力になれることもあるかもしれません。</p>
+            <p>現在は会社で、デザイナー、プログラマー、ライターなどと組んでクライアントとの橋渡しとなりつつ陣頭指揮を取るディレクター職を専門にしていますが、元々作るのが好きでプライベートでは個人でいろいろ思いつきで作ったりしているので、お力になれることもあるかもしれません。</p>
             <p>よろしければお話をお聞かせください。</p>
           </div>
         </div>
@@ -5771,7 +5781,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                         data-component-file="Portfolio.tsx" data-component-name="div"
                         data-component-content="%7B%22className%22%3A%22absolute%20inset-0%20bg-gradient-to-t%20from-black%2F60%20to-transparent%22%7D"
                         class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                      <a href="http://flow-t.net/akariju/wp" target="_blank" rel="noopener noreferrer" class="absolute inset-0 z-10"></a>
+                      
                       <div data-lov-id="src/components/Portfolio.tsx:37:18" data-lov-name="div"
                         data-component-path="src/components/Portfolio.tsx" data-component-line="37"
                         data-component-file="Portfolio.tsx" data-component-name="div"
@@ -5810,6 +5820,9 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                         class="text-muted-foreground mb-4 leading-relaxed">
                         このサイト専用のテーマを作成。運用担当者がHTMLの知識がないとの相談を踏まえ、サイト内の各パーツを様々なページでHTMLが書けない運用担当者でも直感的に使い回せるように作成。実際のページデザインを反映した編集画面。
                       </p>
+                      <div class="notice">
+                        実際のサイトはサイト名を検索して御覧ください。（契約上、直接リンクは問題があるため）
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -5838,7 +5851,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                         data-component-file="Portfolio.tsx" data-component-name="div"
                         data-component-content="%7B%22className%22%3A%22absolute%20inset-0%20bg-gradient-to-t%20from-black%2F60%20to-transparent%22%7D"
                         class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                      <a href="https://flow-t.net/kakemochi_dev" target="_blank" rel="noopener noreferrer" class="absolute inset-0 z-10"></a>
+                      
                       <div data-lov-id="src/components/Portfolio.tsx:73:18" data-lov-name="div"
                         data-component-path="src/components/Portfolio.tsx" data-component-line="73"
                         data-component-file="Portfolio.tsx" data-component-name="div"
@@ -5914,6 +5927,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                             <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
                             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                           </svg>¥5,000〜改修</div>
+
                       </div>
                     </div>
                   </div>
